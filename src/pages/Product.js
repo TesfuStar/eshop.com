@@ -36,7 +36,7 @@ const Product = () => {
   return (
     <>
 <div className="  mx-3 md:max-w-5xl md:mx-auto grid shadow-lg
-     grid-cols-1 md:grid-cols-2 justify-center items-center rounded-2xl my-10 h-auto">
+     grid-cols-1 md:grid-cols-2 justify-center items-center rounded-2xl my-20 h-auto">
          <div  className='h-auto   items-center 
            justify-center'>
        
@@ -50,16 +50,16 @@ const Product = () => {
         pt-8 rounded-b-2xl lg:rounded-2xl  '>
        
        <div className='flex flex-col w-full h-full  px-3 lg:px-5 space-y-2 my-3'>
-       <h1 className='flex text-slate-800 text-4xl font-bold md:pb-2'>{product.title}</h1>
-          <p className='  font-bold text-xl text-slate-800'>
-           <span className='text-2xl'>{product.price} ETB</span> </p>
-           <p className='text-slate-700 font-semibold'>{product.description} </p>
+       <h1 className='flex text-gray-600 text-4xl font-semibold md:pb-2'>{product.title}</h1>
+          <p className='  font-bold text-xl text-gray-600'>
+           <span className='text-2xl font-bold text-gray-700'>{product.price} ETB</span> </p>
+           <p className='text-slate-700 font-normal'>{product.description} </p>
           
           <div className='flex w-full space-x-2'>
          <button onClick={()=>handleAddproduct(product)}
           className="w-full bg-gradient-to-b from-sky-600 
           to-sky-500
-             flex-grow py-2 text-white font-semibold text-xl rounded-md ">Add to bag</button>
+             flex-grow py-2 text-white font-medium text-xl rounded-md ">Add to bag</button>
              </div>
             </div>        
        </div>

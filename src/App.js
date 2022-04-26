@@ -1,23 +1,13 @@
 import React, { useState ,useEffect} from 'react'
-import {Routes,
-  Route,
-  useNavigate,
-  Navigate
-} from "react-router-dom";
-
+import {Routes,Route,Navigate} from "react-router-dom";
 import {Product,Home,ProductList,Login,Signup,Cart,Order,Search} from './pages'
-
 import Navbar from './components/Navbar';
 import Dropdown from './components/Dropdown';
-
 import { useSelector } from 'react-redux';
 import Account from './pages/Account';
 import Checkout from './components/Checkout';
-
 const App = () => {
-  const [query,setQuery]= useState("")
-  const navigate= useNavigate()
-  
+  const [query,setQuery]= useState("");
   const [isOpen,setIsOpen]=useState(false)
   const toggle=()=>{
     setIsOpen(!isOpen)
@@ -38,10 +28,9 @@ const App = () => {
   
   })
   
- const user = useSelector((state)=>state.user.currentUser)
+ const user = useSelector((state)=>state.user.currentUser?.accessToken)
  const[checkoutBill,setCheckoutBill]=useState(false)
-
-  const openCheckout=()=>{
+ const openCheckout=()=>{
     setCheckoutBill(!checkoutBill)
   }
 

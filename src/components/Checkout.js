@@ -6,17 +6,13 @@ import { addToOrder,orderFailed } from '../Redux/orderReducer'
 import { useLocation } from "react-router-dom";
 import { userRequest } from '../request'
 const Checkout = ({checkoutBill,openCheckout}) => {
-  const dispach=useDispatch()
-  const location=useLocation();
-  const carts=location.state?.cart;
-  console.log(carts);
+ 
   const cart = useSelector((state)=>state.cart)
   const user = useSelector((state)=>state.user.currentUser)
-  const cartItems=cart.cartItems
   const amount = cart.cartTotalAmount + 15;
   const [address,setAddress]=useState("");
   const [name,setName]=useState("");
-  const [phoneNumber,setPhoneNumber]=useState(+251);
+  const [phoneNumber,setPhoneNumber]=useState('');
     const [message,setMessage]=useState(false);
     const [error,setError]=useState(false);
     const handleClick=async()=>{
@@ -49,8 +45,8 @@ const Checkout = ({checkoutBill,openCheckout}) => {
         <div className='flex flex-col items-center space-y-3 my-5 py-10'>
             <div className='flex flex-col items-center space-y-1'>
 
-            <h1 className='font-bold text-slate-700 text-xl'>Order now</h1>
-            <h2 className="flex text-md font-semibold text-gray-900">Total:{amount} ETB</h2>
+            <h1 className='font-semibold text-slate-700 text-xl'>Order now</h1>
+            <h2 className="flex text-md font-medium text-gray-600">Total:{amount} ETB</h2>
             </div>
             <input type="text" placeholder='Your name' value={name}  onChange={(e)=>setName(e.target.value)}
              className=' border focus:outline-1
@@ -69,7 +65,7 @@ const Checkout = ({checkoutBill,openCheckout}) => {
                   </div>
             <button onClick={handleClick}
             className='bg-gradient-to-b from-sky-600 
-          to-sky-500 w-[80%] font-semibold p-2 
+          to-sky-500 w-[80%] font-medium p-2 
             text-white text-lg rounded-md '>Submit Order</button>
              {error && <h2 className='flex duration-300 text-xs text-red-600'>please log in again</h2>}
             

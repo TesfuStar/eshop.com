@@ -23,15 +23,15 @@ const Product = ({item}) => {
      width={200} height={200}  className='hover:scale-105 duration-500 object-cover'/>
        </div>
      </Link>
-     <h1 className='font-semibold text-md text-slate-900'>{item.title}</h1>
+     <h1 className='font-semibold text-md text-slate-600'>{item.title}</h1>
      <div className='flex'>
     {Array(rating).fill().map((_,i)=>(
       <StarIcon  className='h-4 text-yellow-500' key={i}/>
     ))}
      </div>
-     <p className='font-semibold text-slate-900'>ETB {item.price}</p>
-     <p className='text-xs p-1'>{item.description}</p>
-     <button className='bg-gradient-to-b from-sky-700 to-sky-800 p-2 text-white text-sm font-semibold 
+     <p className='font-medium text-slate-700 text-md'>ETB {item.price}</p>
+     {/* <p className='text-xs p-1 font-normal text-slate-700'>{item.description}</p> */}
+     <button className='bg-gradient-to-b from-sky-700 to-sky-800 p-2 text-white text-sm font-medium 
      rounded-sm focus:ring-2 focus:ring-sky-600 active:from-sky-600 
      transition duaration-700' onClick={()=>handleCart(item)}>Add to Cart</button>
     </div>

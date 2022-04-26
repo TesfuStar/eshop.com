@@ -19,7 +19,7 @@ const ProductList = () => {
     <div className='flex items-center justify-end '>
    {/* <h3 className='font-bold text-red-400 text-xl px-3'>Sort By</h3> */}
    <select name="" onChange={(e)=>setSort(e.target.value)}
-    className='px-3 py-2 font-semibold text-gray-500 bg-white border-blue-400 border-2'>
+    className='px-3 py-2 font-medium text-gray-500 bg-white border-blue-400 border-2'>
    <option value="latest" >latest</option>
    <option value="cheapest" >chepest</option>
    <option value="expensive">expensive</option>
@@ -30,8 +30,8 @@ const ProductList = () => {
    <div className="max-w-4xl mx-auto mt-10 ">
        <div className="my-2 flex-col  sm:flex sm:flex-row justify-between ">
       <div className="w-full flex-col py-2  px-4 ">
-      <h2 className="font-bold text-2xl text-gray-800">Stay Tuned in with Our Newsletter</h2>
-      <p className="font-semibold text-lg text-gray-800">We hand-pick our favorites and send you the hottest deals every week</p>
+      <h2 className="font-semibold text-2xl text-gray-700">Stay Tuned in with Our Newsletter</h2>
+      <p className="font-medium text-md text-gray-600">We hand-pick our favorites and send you the hottest deals every week</p>
        </div>
 
        <div className="w-full flex-col  px-4 flex-grow ">
@@ -42,7 +42,7 @@ const ProductList = () => {
                <button type='submit'
           className="w-full bg-gradient-to-b from-sky-600 
           to-sky-500 px-4 flex-grow
-           py-2 text-white font-semibold text-xl rounded-md ">subscribe</button>
+           py-2 text-white font-medium text-xl rounded-md ">subscribe</button>
           </form>
        </div>
      </div>

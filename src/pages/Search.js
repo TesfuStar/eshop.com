@@ -44,7 +44,7 @@ const Search = () => {
             ))}
              </div>
              <p className='font-semibold text-slate-900'>{item.price}</p>
-             <p className='text-xs p-1'>{item.description}</p>
+             {/* <p className='text-xs p-1'>{item.description}</p> */}
              <button className='bg-gradient-to-b from-sky-700 to-sky-800 p-2 text-white text-sm font-semibold 
              rounded-sm focus:ring-2 focus:ring-sky-600 active:from-sky-600 
              transition duaration-700' onClick={()=>handleCart(item)}>Add to Cart</button>

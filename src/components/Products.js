@@ -28,7 +28,7 @@ const Products = ({cat,sort,query,searchProducts}) => {
 
     useEffect(()=>{
      if((sort === "latest")){
-      setFilteredProducts((prev)=>[...prev].sort((a,b)=>a.createdAt - b.createdAt))
+      setFilteredProducts((prev)=> [...prev].sort((a, b) => a.createdAt - b.createdAt))
      }else  if((sort === "expensive")){
       setFilteredProducts((prev)=>[...prev].sort((a,b)=>b.price - a.price))
      }else{

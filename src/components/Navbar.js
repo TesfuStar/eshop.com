@@ -19,13 +19,14 @@ const Navbar = ({toggle}) => {
 
   const {cartQuantity} = useSelector(state=>state.cart )
 
-
-  const user = useSelector((state)=>state.user.currentUser)
-  const username = user ? user.username : "signin"
+  const name = useSelector((state)=>state.user.currentUser)
+  const user = useSelector((state)=>state.user.currentUser?.accessToken)
+  const username = user ? name.username : "signin"
   const dispach = useDispatch()
   const handleClick =(e)=>{
        e.preventDefault();
        logout(dispach);
+       navigate('/')
   }
 
 
@@ -37,7 +38,8 @@ const handleSearch=async(e)=>{
     try{
   
       const productItems = await publicRequest.get(  `/product/search?searchQuery=${search}`);
-      navigate('/search',{state:{data:productItems.data}})
+      navigate(`/search?products=${search}`,{state:{data:productItems.data}})
+      setSearch('')
      }catch(err){
        console.log(err)
   
@@ -67,16 +69,16 @@ const handleSearch=async(e)=>{
     
      </div>
      <div className=' flex flex-col group relative text-white text-xs p-2 mx-1 cursor-pointer hover:outline outline-1'>
-     <p className='font-semibold'>Hello,{ username}</p>
-     <p className='font-bold'>Account & orders</p>
+     <p className='font-medium'>Hello,{ username}</p>
+     <p className='font-semibold'>Account & orders</p>
      <div className='absolute bg-white shadow-lg top-12 z-50 right-0 hidden group-hover:flex group-hover:flex-col'>
       <div className='p-2 px-4 py-4'>
         {user ? <button  onClick={handleClick}
         className='bg-gradient-to-b from-red-600 
-        to-red-500 p-1 px-20  text-white text-sm font-semibold '>logout</button> :
+        to-red-500 p-1 px-20  text-white text-sm font-medium '>logout</button> :
         <Link to="/login">
          <button className='bg-gradient-to-b from-red-600 
-        to-red-500 p-1 px-20  text-white text-sm font-semibold '>signin</button>
+        to-red-500 p-1 px-20  text-white text-sm font-medium '>signin</button>
           </Link>
           } 
         </div>
@@ -99,9 +101,9 @@ const handleSearch=async(e)=>{
 
      <div className='relative flex items-center px-2 mr-4 py-1 cursor-pointer hover:outline outline-1 text-white'>
         <ShoppingCartIcon className='h-10 text-white '/>
-        <span className='absolute top-0 right-12 md:right-12 text-black font-bold text-xs
+        <span className='absolute top-0 right-0 md:right-12 text-gray-700 font-semibold text-xs
           bg-yellow-400 rounded-full h-4 w-4 text-center'>{cartQuantity}</span>
-         <span className='text-white font-bold text-xs sm:text-sm'>Basket</span>
+         <span className='hidden sm:flex text-white font-medium text-xs sm:text-sm'>Basket</span>
      </div>
           </Link>
           <div className='flex sm:hidden cursor-pointer' onClick={toggle}>

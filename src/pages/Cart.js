@@ -30,8 +30,8 @@ const Cart = ({openCheckout}) => {
         
            {cart.cartItems.length === 0 ? (
          
-              <h3 className='text-center font-semibold  py-20
-              text-xl text-gray-700'>your cart is empty,please add some products</h3>
+              <h3 className='text-center font-medium  py-20
+              text-xl text-gray-600'>your cart is empty,please add some products</h3>
              ) :
              
               (<>
@@ -55,9 +55,9 @@ const Cart = ({openCheckout}) => {
             className='rounded-xl w-20 min-h-32  md:w-24   md:h-24 object-cover '/>
             </div>
           <div className="pl-2">
-          <h2 className="text-gray-700 text-xs sm:text-lg font-bold">{cartItem.title}</h2>
-          <p className="line-clamp-2 text-sm  ">{cartItem.description}</p>
-          <h2 className="text-gray-700  text-sm font-bold">{cartItem.price}</h2>
+          <h2 className="text-gray-500 text-xs sm:text-lg font-semibold">{cartItem.title}</h2>
+          {/* <p className="line-clamp-2 text-gray-500 text-sm font-medium ">{cartItem.description}</p> */}
+          <h2 className="text-gray-600  text-sm font-bold">{cartItem.price}</h2>
           
        </div>
        
@@ -98,19 +98,19 @@ const Cart = ({openCheckout}) => {
            <h2 className="flex font-bold text-2xl text-sky-600
            items-center justify-center">Order Summary</h2>
            <div className="flex flex-row justify-between items-center  my-1 ">
-           <h2 className="flex text-md font-semibold text-gray-900">Subtotal</h2>
-           <h2 className="flex text-md font-semibold text-gray-900">{cart.cartTotalAmount} ETB</h2>
+           <h2 className="flex text-md font-semibold text-gray-600">Subtotal</h2>
+           <h2 className="flex text-md font-semibold text-gray-600">{cart.cartTotalAmount} ETB</h2>
            </div>
            <div className="flex flex-row justify-between items-center  my-1 ">
-           <h2 className="flex text-md font-semibold text-gray-900">Shipping Cost</h2>
-           <h2 className="flex text-md font-semibold text-gray-900">15 <span> ETB</span></h2>
+           <h2 className="flex text-md font-semibold text-gray-600">Shipping Cost</h2>
+           <h2 className="flex text-md font-semibold text-gray-600">15 <span> ETB</span></h2>
            </div>
            <div className="flex flex-row justify-between items-center  my-1 ">
-           <h2 className="flex text-md font-semibold text-gray-900">Total</h2>
-           <h2 className="flex text-md font-semibold text-gray-900">{cart.cartTotalAmount + 15} ETB</h2>
+           <h2 className="flex text-md font-semibold text-gray-600">Total</h2>
+           <h2 className="flex text-md font-semibold text-gray-600">{cart.cartTotalAmount + 15} ETB</h2>
            </div>
              <button title={user ? "checkout now" : "please sign in to checkout"} onClick={user ? openCheckout : ""}
-             className={user ? "w-full bg-red-500  px-4 flex-grow py-2 text-white font-semibold text-xl rounded-md ": "w-full cursor-not-allowed bg-red-500  px-4 flex-grow py-2 text-white font-semibold text-xl rounded-md "}>Checkout Now</button>
+             className={user ? "w-full bg-red-500  px-4 flex-grow py-2 text-white font-medium text-xl rounded-md ": "w-full cursor-not-allowed bg-red-500  px-4 flex-grow py-2 text-white font-semibold text-xl rounded-md "}>Checkout Now</button>
            </div>
         </div>
         <Footer />
